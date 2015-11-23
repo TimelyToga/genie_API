@@ -10,7 +10,8 @@ curl -H "Content-Type: application/json" -d '{"guid": "12345678901"}' http://127
 curl -H "Content-Type: application/json" -d '{"guid": "12345678901"}' http://127.0.0.1:8000/user/login
 
 
-## POST STUFF
-curl -v -c cookie.txt -b cookies.txt -H "X-CSRFToken: E8DHCUxBkiA52IzGNhHQZGjmPO4v0hHF, Content-Type: application/json" -d '{"content":"Content of post 1","created_by":"1"}' http://127.0.0.1:8000/post/create
+## Post Create
+curl -H "Content-Type: application/json" -d '{"sid": "aPsYYN9_r1H3ZuGAbrekzw==", "content": "This is the first post"}' http://127.0.0.1:8000/post/create
+
 
 $ curl -v -c cookies.txt -b cookies.txt host.com/registrations/register/

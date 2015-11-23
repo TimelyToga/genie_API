@@ -53,7 +53,7 @@ def require_session(func):
       return JsonResponseBadRequest('no sid')
     if not request.session:
       return HttpResponseUnauthorized()
-    update_user_agent_time_zone_if_needed(request.session, request.user_agent, request.time_zone)
+    update_user_agent_time_zone_if_needed(request.session, {}, "")#, request.user_agent, request.time_zone)
     return func(request)
   return wrapper
 

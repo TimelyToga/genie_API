@@ -26,6 +26,12 @@ class User(models.Model):
         except ObjectDoesNotExist:
             return None
 
+    def get_as_data(self, from_user):
+        if(from_user):
+            return {"guid": self.guid, "created": str(self.created), "username": self.username}
+
+        return {"id": self.id, "guid": self.guid, "created": str(self.created), "username": self.username}
+
 class Session(models.Model):
   class Meta:
     db_table = 'user_session'

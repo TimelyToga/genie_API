@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'genie_api.appuser',
+    'genie_api.post',
 )
 
 MIDDLEWARE_CLASSES = (

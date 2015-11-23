@@ -33,7 +33,7 @@ middlewarepatterns = mpatterns('',
 urlpatterns = patterns('',
     url(r'^$', 'genie_api.handler.get_cookie'),
     url(r'^ok$', 'genie_api.handler.ok'),
-    #url(r'^post', include('genie_api.post.urls')),
+    url(r'^post', include('genie_api.post.urls')),
     url(r'^user', include('genie_api.appuser.urls')),
 
 )

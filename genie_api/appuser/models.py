@@ -81,9 +81,9 @@ class Session(models.Model):
         session.invalidate()
         continue
 
-      # session was created after but hasn't been used in 10 minutes
-      hour_old = genie_api.common.date.datetime.utcnow() - genie_api.common.date.datetime.timedelta(minutes=10)
-      if session.used < hour_old:
+      # session was created after but hasn't been used in 3 days
+      three_days = genie_api.common.date.datetime.utcnow() - genie_api.common.date.datetime.timedelta(minutes=24*60*3)
+      if session.used < three_days:
         ## logging.info('invalidating session: %s and user: %s, %s' % (session.pk, user.pk, session.user_agent))
         session.invalidate()
         continue

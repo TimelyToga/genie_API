@@ -22,6 +22,6 @@ urlpatterns = patterns('',
     url(r'^$', 'genie_api.main_handler.get_cookie'),
     url(r'^ok$', 'genie_api.main_handler.ok'),
     #url(r'^post', include('genie_api.post.urls')),
-    url(r'^user$', include('genie_api.appuser.urls')),
+    url(r'^user', include('genie_api.appuser.urls')),
 
 )

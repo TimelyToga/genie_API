@@ -22,7 +22,7 @@ def create_user(request):
 
     user = User.user_from_id(guid)
     if user:
-        ## TODO: Signin user
+        ## TODO: login user
         ## We know this is new user
         return JsonResponse({'reason': "user already exists", "guid": guid})
 
@@ -43,3 +43,19 @@ def create_user(request):
 
     setattr(request, 'session', session)
     return JsonResponse(dict({'sid': session.pk}.items() + user.get_as_data(True).items()))
+
+@require_json_args('guid')
+def login(request):
+    guid = request.json['guid']
+
+    user = User.user_from_id(guid)
+    if user:
+        session = Session()
+        session.key = base64.urlsafe_b64encode(os.urandom(16))
+        session.user = user
+        session.created = gdate.datetime.utcnow()
+        session.save()
+
+        return JsonResponse(dict({'sid': session.pk}.items() + user.get_as_data(True).items()))
+
+    return JsonResponseBadRequest({"success": False})

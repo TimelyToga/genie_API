@@ -1,8 +1,14 @@
+## STACKEXCHANGE EXAMPLE
 curl -v -c cookies.txt -b cookies.txt http://127.0.0.1:8000
 curl -v -c cookies.txt -b cookies.txt -d "email=user@site.com&a=1&csrfmiddlewaretoken=E8DHCUxBkiA52IzGNhHQZGjmPO4v0hHF" host.com/registrations/register/
 
+ -v -c cookies.txt -b cookies.txt
+## User Create
+
+curl -H "Content-Type: application/json" -d '{"guid": "1234567890"}' http://127.0.0.1:8000/user/create
 
 
+## POST STUFF
 curl -v -c cookie.txt -b cookies.txt -H "X-CSRFToken: E8DHCUxBkiA52IzGNhHQZGjmPO4v0hHF, Content-Type: application/json" -d '{"content":"Content of post 1","created_by":"1"}' http://127.0.0.1:8000/post/create
 
 $ curl -v -c cookies.txt -b cookies.txt host.com/registrations/register/

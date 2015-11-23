@@ -13,7 +13,8 @@ class User(models.Model):
     class Meta:
         ordering = ('created',)
 
-    guid = IntegerField(primary_key=True, unique=True, auto_created=True)
+    id = IntegerField(primary_key=True, unique=True, auto_created=True)
+    guid = CharField(db_index=True, max_length=256)
     created = DateTimeField(auto_now=True)
     username = CharField(max_length=128, db_index=True)
 

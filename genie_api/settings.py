@@ -13,6 +13,11 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
+DEBUG = bool(ENVIRONMENT == 'development')
+STAGING = bool(ENVIRONMENT == 'staging')
+PRODUCTION = bool(ENVIRONMENT == 'production')
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -101,3 +106,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+SESSION_COOKIE_SECURE = True if PRODUCTION else False
+SESSION_COOKIE_DOMAIN = '.genieapp.com' if PRODUCTION else None

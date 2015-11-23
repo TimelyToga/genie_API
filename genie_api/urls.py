@@ -16,7 +16,19 @@ Including another URLconf
 from django.conf.urls import include, url, patterns
 from django.contrib import admin
 
+from urlmiddleware.conf import middleware, mpatterns
+
+from genie_api.common.middleware import SessionOnRequestMiddleware, SidOnRequestMiddleware, JsonOnRequestMiddleware
+
+
+
 import genie_api.main_handler as mh
+
+middlewarepatterns = mpatterns('',
+    middleware(r'^.*$', JsonOnRequestMiddleware),
+    middleware(r'^.*$', SidOnRequestMiddleware),
+    middleware(r'^.*$', SessionOnRequestMiddleware),
+)
 
 urlpatterns = patterns('',
     url(r'^$', 'genie_api.main_handler.get_cookie'),

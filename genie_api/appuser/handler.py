@@ -12,7 +12,10 @@ import genie_api.common.date as gdate
 @require_json_args('guid')
 def create_user(request):
     guid = request.json['guid']
-    username = request.json['username']
+    if(request.json.has_key('username')):
+        username = request.json['username']
+    else:
+        username = ""
 
     ## TODO: Do some guid checking
 
@@ -20,7 +23,7 @@ def create_user(request):
     if User:
         ## TODO: Signin user
         ## We know this is new user
-        return JsonResponse("User already exists.")
+        return JsonResponse({'reason': "user already exists", "guid": guid})
 
     with transaction.atomic():
         ## Create new user

@@ -1,4 +1,4 @@
-"""genieapi URL Configuration
+"""genie_api URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
@@ -21,6 +21,7 @@ import genie_api.main_handler as mh
 urlpatterns = patterns('',
     url(r'^$', 'genie_api.main_handler.get_cookie'),
     url(r'^ok$', 'genie_api.main_handler.ok'),
-    #url(r'^post', include('genieapi.post.urls')),
-    #url(r'^user$', include('genieapi.user.urls')),
+    #url(r'^post', include('genie_api.post.urls')),
+    url(r'^user$', include('genie_api.appuser.urls')),
+
 )

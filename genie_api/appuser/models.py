@@ -13,7 +13,8 @@ class User(models.Model):
     class Meta:
         ordering = ('created',)
 
-    id = IntegerField(primary_key=True, unique=True, auto_created=True)
+    id = models.CharField(primary_key=True, max_length=256, null=False)
+    ## id = CharField(primary_key=True, unique=True)
     guid = CharField(db_index=True, max_length=256)
     created = DateTimeField(auto_now=True)
     username = CharField(max_length=128, db_index=True)
@@ -27,7 +28,7 @@ class User(models.Model):
 
 class Session(models.Model):
   class Meta:
-    db_table = 'camoji_session'
+    db_table = 'user_session'
 
   key = models.CharField(primary_key=True, max_length=256)
   user = models.ForeignKey(User, related_name='+')

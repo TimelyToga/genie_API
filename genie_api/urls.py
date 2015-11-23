@@ -22,7 +22,7 @@ from genie_api.common.middleware import SessionOnRequestMiddleware, SidOnRequest
 
 
 
-import genie_api.main_handler as mh
+import genie_api.handler as mh
 
 middlewarepatterns = mpatterns('',
     middleware(r'^.*$', JsonOnRequestMiddleware),
@@ -31,8 +31,8 @@ middlewarepatterns = mpatterns('',
 )
 
 urlpatterns = patterns('',
-    url(r'^$', 'genie_api.main_handler.get_cookie'),
-    url(r'^ok$', 'genie_api.main_handler.ok'),
+    url(r'^$', 'genie_api.handler.get_cookie'),
+    url(r'^ok$', 'genie_api.handler.ok'),
     #url(r'^post', include('genie_api.post.urls')),
     url(r'^user', include('genie_api.appuser.urls')),
 

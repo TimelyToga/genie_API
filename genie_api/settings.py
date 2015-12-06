@@ -20,6 +20,8 @@ PRODUCTION = bool(ENVIRONMENT == 'production')
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+TEMPLATE_DIR = os.path.join(os.path.join(BASE_DIR, "static"), "templates")
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -61,7 +63,7 @@ ROOT_URLCONF = 'genie_api.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -114,3 +116,9 @@ STATIC_URL = '/static/'
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 SESSION_COOKIE_SECURE = True if PRODUCTION else False
 SESSION_COOKIE_DOMAIN = '.genieapp.com' if PRODUCTION else None
+
+STATIC_FOLDER = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)

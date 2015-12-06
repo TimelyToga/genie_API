@@ -29,7 +29,7 @@ def create_user(request):
     with transaction.atomic():
         ## Create new user
         user = User(guid=guid)
-        user.id = generate(User, 18, 'numeric')
+        user.db_key = generate(User, 18, 'numeric')
         if username:
             user.username = username
         user.save()

@@ -1,4 +1,4 @@
-from django.db.models import CharField, DateField, DateTimeField, ForeignKey, IntegerField, TextField
+from django.db.models import CharField, DateField, DateTimeField, ForeignKey, IntegerField, TextField, ManyToManyField
 from django.db import models
 
 from genie_api.appuser.models import User
@@ -16,3 +16,10 @@ class Post(models.Model):
     content = TextField(blank=True)
     reply_number = IntegerField(default=0)
     created_by = ForeignKey(User)
+
+    def get_as_data(self):
+        return {"id": self.id,
+                "created": str(self.created),
+                "content": self.content,
+                "reply_number": self.reply_number,#}
+                "created_by": self.created_by.get_as_data()}

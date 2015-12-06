@@ -8,12 +8,14 @@ import genie_api.common.date
 
 # Create your models here.
 
+
+## Always use the GUID to identify the user
 class User(models.Model):
     class Meta:
+        db_table = 'user'
         ordering = ('created',)
 
     id = models.CharField(primary_key=True, max_length=256, null=False)
-    # # id = CharField(primary_key=True, unique=True)
     guid = CharField(db_index=True, max_length=256)
     created = DateTimeField(auto_now=True)
     username = CharField(max_length=128, db_index=True)
@@ -29,7 +31,7 @@ class User(models.Model):
         if (from_user):
             return {"guid": self.guid, "created": str(self.created), "username": self.username}
 
-        return {"id": self.id, "guid": self.guid, "created": str(self.created), "username": self.username}
+        return {"db_key": self.db_key, "guid": self.guid, "created": str(self.created), "username": self.username}
 
 
 class Session(models.Model):

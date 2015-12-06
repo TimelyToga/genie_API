@@ -54,7 +54,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'urlmiddleware.URLMiddleware', ## urls.py?
 )
 
 ROOT_URLCONF = 'genie_api.urls'

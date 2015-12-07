@@ -8,7 +8,7 @@ import django.conf.urls
 import json
 
 def index(request):
-    return render(request, 'index.html', {})
+    return render(request, 'theme.html', {})
 
 def get_cookie(request):
     c = {}

@@ -109,6 +109,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = '/static/'
+
 # MIDDLEWARE_CLASSES = (
 #   'urlmiddleware.URLMiddleware', # see urls.py
 # )

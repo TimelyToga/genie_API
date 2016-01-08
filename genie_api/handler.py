@@ -10,6 +10,9 @@ import json
 def index(request):
     return render(request, 'theme.html', {})
 
+def about(request):
+    return render(request, 'about.html', {})
+
 def get_cookie(request):
     c = {}
     c.update(csrf(request))

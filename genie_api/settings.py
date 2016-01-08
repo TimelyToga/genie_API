@@ -30,7 +30,6 @@ TEMPLATE_DIR = os.path.join(os.path.join(BASE_DIR, "static"), "templates")
 SECRET_KEY = '2qqbx26jt^hc64c$olfo9nfv#230jb8w5%8(3r17(18&@$m228'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -124,3 +123,8 @@ STATIC_FOLDER = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+DEBUG = False
+
+# Allow all host headers
+ALLOWED_HOSTS = ['*']

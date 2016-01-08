@@ -1,3 +1,9 @@
 html {
-    background-color: black;
+}
+
+.team {
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+    width: 50%;
 }

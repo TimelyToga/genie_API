@@ -14,12 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url, patterns
-from django.contrib import admin
 
 from urlmiddleware.conf import middleware, mpatterns
 
 from genie_api.common.middleware import SessionOnRequestMiddleware, SidOnRequestMiddleware, JsonOnRequestMiddleware
 
+from django.conf import settings
+import os
 
 
 import genie_api.handler as mh
@@ -36,5 +37,10 @@ urlpatterns = patterns('',
     url(r'^about$', 'genie_api.handler.about'),
     url(r'^/_/post', include('genie_api.post.urls')),
     url(r'^/_/user', include('genie_api.appuser.urls')),
-
 )
+#
+# if settings.DEBUG404:
+#     urlpatterns += patterns('',
+#         (r'^static/(?P<path>.*)$', 'django.views.static.serve',
+#          {'document_root': os.path.join(os.path.dirname(__file__), 'static')} ),
+#     )

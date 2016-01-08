@@ -31,7 +31,7 @@ SECRET_KEY = '2qqbx26jt^hc64c$olfo9nfv#230jb8w5%8(3r17(18&@$m228'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -125,6 +125,3 @@ STATICFILES_DIRS = (
 )
 
 DEBUG = False
-
-# Allow all host headers
-ALLOWED_HOSTS = ['*']

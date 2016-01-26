@@ -1,12 +1,37 @@
 {% extends 'base.html' %}
 
+{%  block header %}
+        <link href="/static/css/about.css" rel="stylesheet"/>
+{% endblock header %}
+
 {% block body %}
     <div class="header">
-        This will have all the stuff you need to know about Genie...
+        <a id="main_link" href="http://www.genieapp.ca/">
+            <h1 id="genie_app_title">GENIE APP</h1>
+        </a>
+        <h1 id="title">We're here to make the world a <span class="yellow">better place.</span></h1>
     </div>
 
 
     <div class="body_container">
+        <div class="img_wrapper">
+            <img id="earth_img" src="/static/img/earth.png">
+            <div class="words_container">
+                <div>
+                    <p id="main_desc">
+                        We're working on an app that hopes to improve humanity by providing
+                        a framework for people to teach other people interesting skills that
+                        they have. In short, we're about
+                        sharing knowledge and
+                        <span class="yellow">living genuinely.</span>
+                    </p>
+                </div>
+                <div>
+                    <a id="sign_up" href="gdoc">Sign me up!</a>
+                </div>
+
+            </div>
+        </div>
 
     </div>
 {% endblock body %}

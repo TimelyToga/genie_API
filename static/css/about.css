@@ -1,0 +1,139 @@
+html {
+    background-color: #042E47;
+    font-family: "Helvetica Neue";
+    color: white;
+}
+
+.header {
+    width: 100%;
+}
+
+#main_link {
+    text-decoration: none;
+}
+
+#genie_app_title {
+    color: white;
+    margin: 50px;
+    padding: 5px;
+    border: 5px solid white;
+    width: 270px;
+    display: inline-block;
+    font-size: 36pt;
+    text-align: center;
+}
+
+#title {
+    font-size: 32pt;
+    float: right;
+    padding: 25px;
+    width: 700px;
+    display: inline-block;
+    text-align: right;
+    position: absolute;
+    right: 15px
+}
+
+.yellow {
+    color: yellow;
+}
+
+.orange {
+    color: deeppink;
+}
+
+.green {
+    color: deeppink;
+}
+
+p {
+    font-size: 18pt;
+}
+
+#main_desc {
+    width: 500px;
+    text-align: right;
+    margin: 30px;
+    float: right;
+}
+
+#earth_img {
+    margin-top: 40px;
+    width: 500px;
+}
+
+#sign_up {
+    text-decoration: none;
+    background-color: deeppink;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 30px;
+    display: inline-block;
+    border-radius: 2px;
+    margin: 10px 100px;
+    float: right;
+}
+
+.words_container {
+    float: right;
+}
+
+@media only screen and (max-width: 1100px) {
+
+    #title {
+        font-size: 25pt;
+        width: 300px;
+        display: inline-block;
+        text-align: right;
+        position: relative;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .header {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    #earth_img {
+        margin: 10px auto;
+        width: 300px;
+        display: block;
+    }
+
+    #title {
+        font-size: 25pt;
+        width: 300px;
+        display: block;
+        text-align: right;
+        float: right;
+        margin: 10px 30px 20px 20px;
+        padding: 0;
+    }
+
+    #sign_up {
+        padding: 8px;
+        font-size: 25px;
+        margin: 10px auto;
+        float: none;
+        display: block;
+        width: 150px;
+        text-align: center;
+    }
+
+    #main_desc {
+        width: 300px;
+        margin: 20px auto;
+        float: none;
+        text-align: center;
+    }
+
+
+    .words_container {
+        width: 100%;
+    }
+}

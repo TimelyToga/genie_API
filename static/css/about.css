@@ -2,6 +2,11 @@ html {
     background-color: #042E47;
     font-family: "Helvetica Neue";
     color: white;
+    padding: 0;
+}
+
+body {
+    padding: 0;
 }
 
 .header {
@@ -95,7 +100,74 @@ p {
         padding: 0;
         margin: 0;
     }
+
+    #earth_img {
+        margin: 10px auto;
+        display: block;
+    }
+
+    #title {
+        font-size: 30pt;
+        width: 500px;
+        display: block;
+        text-align: right;
+        float: right;
+        margin: 10px 30px 20px 20px;
+        padding: 40px 0;
+    }
+
+    #sign_up {
+        padding: 8px;
+        font-size: 25px;
+        margin: 10px auto;
+        float: none;
+        display: block;
+        width: 150px;
+        text-align: center;
+    }
+
+    #main_desc {
+        width: 500px;
+        margin: 20px auto;
+        float: none;
+        text-align: center;
+    }
+
+
+    .words_container {
+        width: 100%;
+    }
 }
+
+@media only screen and (max-width: 980px){
+
+    #title {
+        display: block;
+        text-align: right;
+        margin: 10px auto;
+        width: 350px;
+        font-size: 28pt;
+    }
+}
+
+@media only screen and (max-width: 760px){
+
+    #title {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        width: 350px;
+        font-size: 28pt;
+        float: none;
+        padding: 0;
+    }
+
+    #earth_img {
+        padding: 0;
+    }
+}
+
+
 
 @media only screen and (max-width: 500px) {
 
